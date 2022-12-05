@@ -168,7 +168,7 @@ process.stdin.on('keypress', function(c,k) {
                 child_process.exec(`start /b ${fg_pid}`)
                 console.log(`process with pid ${fg_pid} moved to background`)
             } catch (error) {
-                console.log('No child process is running currently!')
+                console.log(error)
             }
         }
     }
@@ -184,7 +184,7 @@ rl.on('SIGTSTP', () => {
         child_process.exec(`bg ${fg_pid}`)
         console.log(`process with pid ${fg_pid} moved to background`)
     } catch (error) {
-        console.log('No child process is running currently!')
+        console.log(error)
     }
 })
 
